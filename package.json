@@ -14,8 +14,7 @@
   "scripts": {
     "react-dev": "./node_modules/.bin/webpack -d --watch",
     "start": "node .",
-    "build": "./node_modules/.bin/webpack -d",
-    "//heroku-prebuild": "yarn install --dev"
+    "build": "./node_modules/.bin/webpack -p"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
