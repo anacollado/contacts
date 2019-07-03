@@ -14,7 +14,7 @@
   "scripts": {
     "react-dev": "./node_modules/.bin/webpack -d --watch",
     "start": "yarn build && node .",
-    "build": "webpack -d"
+    "build": "./node_modules/.bin/webpack -d"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
