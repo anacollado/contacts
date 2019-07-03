@@ -4,15 +4,19 @@ import ContactRow from './ContactRow.jsx'
 const Table = (props) => {
   const { contacts } = props;
   return (
-    <div>
-      <div>
-        <div>Contact</div>
-        <div>Total Value</div>
-        <div>Location</div>
-        <div>Deals</div>
-        <div>Tags</div>
+    <div className="table">
+      <div className="table-header">
+        <div className="table-row">
+          <div className="table-cell">Contact</div>
+          <div className="table-cell">Total Value</div>
+          <div className="table-cell">Location</div>
+          <div className="table-cell">Deals</div>
+          <div className="table-cell">Tags</div>
+        </div>
       </div>
-      {contacts.map(contact => <ContactRow contact={contact} key={contact.id} />)}
+      <div className="table-row-group">
+        {contacts.map(contact => <ContactRow contact={contact} key={contact.id} />)}
+      </div>
     </div>
   );
 }
