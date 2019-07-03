@@ -26,7 +26,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Table contacts={this.state.contacts}/>
+      <Table contacts={[]}/>
     );
   }
 }
