@@ -13,7 +13,7 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "yarn build && nodemon",
+    "start": "yarn build && node",
     "build": "webpack -d"
   },
   "devDependencies": {
