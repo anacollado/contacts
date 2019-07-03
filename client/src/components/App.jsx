@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from './Table.jsx';
+import '../styles/main.css';
 
 class App extends React.Component {
   constructor(props) {
