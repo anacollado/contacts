@@ -15,7 +15,6 @@ class App extends React.Component {
       return response.json();
     })
     .then(contacts => {
-      console.log(contacts);
       this.setState({contacts});
     })
   }
@@ -25,8 +24,9 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.contacts)
     return (
-      <Table contacts={[]}/>
+      <Table contacts={this.state.contacts}/>
     );
   }
 }

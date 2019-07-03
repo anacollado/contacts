@@ -2,13 +2,6 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const port = 3000;
-const dummyData = [
-  { id: '1', name: 'Peever Beever', totalValue: 40010, location: 'Chicago IL, USA', deals: 1, tags: ['customer', 'canada'] },
-  { id: '2', name: 'Hankus Pankus', totalValue: 80055, location: 'Albany NY, USA', deals: 4, tags: ['customer', 'america'] },
-  { id: '3', name: 'Penny Lenny', totalValue: 70330, location: 'London, UK', deals: 2, tags: ['retailer', 'europe'] }
-];
-
-
 
 app.use('/', express.static(__dirname + '/../client/dist'));
 
@@ -59,8 +52,8 @@ const getContactFields = (data) => {
         const tagName = contactTagsById[ctId];
         return tagName;
       }),
-      locationStr: locationStrByContactId[contact.id] || '',
-      totalValue: dealTotalsByContactId[contact.id],
+      locationStr: locationStrByContactId[contact.id] || null,
+      totalValue: dealTotalsByContactId[contact.id] || 0,
       firstName: contact.firstName,
       lastName: contact.lastName,
       deals: contact.deals.length,

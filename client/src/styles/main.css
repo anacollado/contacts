@@ -21,7 +21,7 @@
 }
 
 .table-row:nth-child(even) {
-  background-color: #FAFBFF;
+  background-color: #F7F9FE;
 }
 
 .table-cell:nth-child(1) {
@@ -47,6 +47,7 @@
   color: #7D7F83;
   font-weight: 800;
   position: absolute;
+  white-space: nowrap;
 }
 
 .initials-circle {
@@ -58,7 +59,7 @@
 
 .table-cell {
   display: table-cell;
-  min-width: 36px;
+  min-width: 200px;
   vertical-align: middle;
 }
 

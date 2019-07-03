@@ -1,22 +1,29 @@
-export const extractInitials = (str) => {
-  const strArr = str.split(' ');
-  const initialsArr = strArr.map(name => name[0]);
-  return initialsArr.join('').toUpperCase();
+export const extractInitials = (str1, str2) => {
+  const initials = str1.charAt(0) + str2.charAt(0);
+  return initials.toUpperCase();
 }
 
-export const formatMoney = (dollarValue) => {
-  const dollarValueStr = dollarValue.toString();
-  if (dollarValueStr.length <= 3) {
-    return '$' + dollarValueStr;
+//expects totalValue to be in cents
+export const formatMoney = (totalValue) => {
+  let totalValueStr = totalValue.toString();
+  if (totalValueStr.length < 3) {
+    totalValueStr = totalValueStr.padStart(3, '0');
+  }
+  const centsStr = totalValueStr.slice(-2);
+  const dollarsStr = totalValueStr.slice(0, -2);
+
+
+  if (dollarsStr.length <= 3) {
+    return `$${dollarsStr}.${centsStr}`;
   } else {
     var dollarValueWithCommas = '';
-    for (var i = dollarValueStr.length - 1; i >= 0; i--) {
-      if ((dollarValueStr.length - i) % 3 === 0 && i > 0) {
-        dollarValueWithCommas = ',' + dollarValueStr[i] + dollarValueWithCommas;
+    for (var i = dollarsStr.length - 1; i >= 0; i--) {
+      if ((dollarsStr.length - i) % 3 === 0 && i > 0) {
+        dollarValueWithCommas = ',' + dollarsStr[i] + dollarValueWithCommas;
       } else {
-        dollarValueWithCommas = dollarValueStr[i] + dollarValueWithCommas;
+        dollarValueWithCommas = dollarsStr[i] + dollarValueWithCommas;
       }
     }
   }
-  return '$' + dollarValueWithCommas;
+  return `$${dollarValueWithCommas}.${centsStr}`;
 }
