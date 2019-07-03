@@ -12,7 +12,7 @@
     "react-dom": "^16.8.6"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
+    "react-dev": "./node_modules/.bin/webpack -d --watch",
     "start": "yarn build && node .",
     "build": "webpack -d"
   },
